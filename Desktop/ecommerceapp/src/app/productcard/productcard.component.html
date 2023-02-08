@@ -1,0 +1,47 @@
+
+            <div class="product-grid">
+
+
+
+              <div class="product-image">
+                    <a href="#" class="image">
+                        <img class="pic-1" [src]="card.image">
+                         <img class="pic-2" [src]="card.image">
+
+                    </a>
+
+                </div>
+                <div class="product-content">
+
+                    <h3 class="title">{{card.name}}</h3>
+                    <div class="price">{{ card.price | currency  :'EGP'  }}</div>
+                    <div>
+                    {{card.description}}
+                    </div>
+                    <div> {{card.createdAt | date :'MMM YYY'}}</div>
+                    <!-- <div *ngIf="card.count==0;then block else card.count>0;then  block2">
+<ng-template #block>instock</ng-template>
+<ng-template #block2>outofskock</ng-template>
+                    </div> -->
+                      <!-- <div class="price"></d</div> -->
+<ng-template [ngIf]="card.count>0" [ngIfElse]="loading">
+ <div class="text-success">
+  instock
+ </div>
+</ng-template>
+
+<ng-template #loading>
+ <div class="text-danger">outofsock</div>
+</ng-template>
+                    <div class="product-button-group">
+                        <a class="product-like-icon" href="#"><i class="fas fa-heart"></i></a>
+                        <a class="add-to-cart" href="#"><i class="fa fa-shopping-bag"></i>ADD TO CART</a>
+
+                        <a class="product-compare-icon" href="#"><i class="fas fa-random"></i></a>
+
+                      </div>
+                      <div class="btn btn-light" (click)="redirect()">show Detalis
+                      </div>
+                </div>
+            </div>
+

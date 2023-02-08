@@ -1,0 +1,24 @@
+<div class="container">
+<div class="product-grid" >
+
+
+
+              <div class="product-image">
+                    <a href="#" class="image">
+                        <img class="pic-1" [src]="detalis.image">
+                         <img class="pic-2" [src]="detalis.image">
+
+                    </a>
+
+                </div>
+                <div class="product-content">
+
+                    <h3 class="title">{{detalis.name}}</h3>
+                    <div class="price">{{detalis.price | currency  :'EGP'  }}</div>
+                    <div>
+                    {{detalis.description}}
+                    </div>
+                    <div> {{detalis.createdAt | date :'MMM YYY'}}</div>
+
+<!--  -->
+                </div>
