@@ -1,5 +1,5 @@
 <app-input (newItemEvent)="add($event)"></app-input>
-<div class="row"*ngFor="let value of value;let i=index">
-<app-list [value]='value' [i]="i"></app-list>
+<!-- [{}] -->
+<div class="row" *ngFor="let v of value; let i = index">
+  <app-list [value]="v" [i]="i"  (removeItemEvent) ="remove($event)" ></app-list>
 </div>
-
